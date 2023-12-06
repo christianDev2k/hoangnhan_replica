@@ -45,10 +45,10 @@ export default function Footer() {
                 <div className="hidden md:block md:w-1/2 xl:w-4/12 px-[15px]">
                     <h3>SIGN UP TO NEWSLETTER</h3>
                     <p className="pt-[15px]">Enter your email address to get $10 off your first order and free
-                        shipping.Updates information on
+                        shipping. Updates information on
                         Sales and Offers.</p>
-                    <div className="mt-[30px] flex items-center">
-                        <Input variant="email" placeholder="Enter your email..." className="mr-2.5"/>
+                    <div className="mt-[30px] flex gap-2.5 items-center">
+                        <Input variant="email" name="email" placeholder="Enter your email..." autoComplete="true"/>
                         <Button variant="white">Subscribe</Button>
                     </div>
                 </div>
@@ -89,10 +89,10 @@ export default function Footer() {
                                     <div className="mb-2.5">
                                         <p>Enter your email address to get $10 off your first
                                             order and free
-                                            shipping.Updates information on
+                                            shipping. Updates information on
                                             Sales and Offers.</p>
                                         <div className="mt-[30px] flex items-center gap-2.5">
-                                            <Input variant="email" placeholder="Enter your email..."/>
+                                            <Input variant="email" name="email" placeholder="Enter your email..." autoComplete="true"/>
                                             <Button variant="white">Subscribe</Button>
                                         </div>
                                     </div>

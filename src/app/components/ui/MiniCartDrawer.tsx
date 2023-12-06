@@ -179,6 +179,7 @@ export default function CartDrawer({ toggleOpen, setToggleOpen }: ToggleProps) {
                         max={ 5 }
                         defaultValue={ 1 }
                         formatter={ (value) => Math.round(Number(value?.toString())).toString() }
+                        name="qty"
                     />
                 </div>
 

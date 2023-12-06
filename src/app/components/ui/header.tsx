@@ -114,8 +114,8 @@ function AuthenticateModal({ toggleOpen, setToggleOpen }: ToggleProps) {
                             <div>
                                 <h3>Login</h3>
                                 <div className="modal-body">
-                                    <Input variant="primary" placeholder="Your email*" className="form-control"/>
-                                    <Input variant="primary" placeholder="Password*" className="form-control"/>
+                                    <Input variant="primary" name="email" autoComplete="true" placeholder="Your email*" className="form-control"/>
+                                    <Input variant="primary" name="password" autoComplete="true" placeholder="Password*" className="form-control"/>
                                     <a href="#" className="form-text">Forgot your password?</a>
                                     <div className="mt-[30px]">
                                         <div className="mb-5">
@@ -146,10 +146,10 @@ function AuthenticateModal({ toggleOpen, setToggleOpen }: ToggleProps) {
                             <div>
                                 <h3>Create Account</h3>
                                 <div className="modal-body">
-                                    <Input variant="primary" placeholder="First name" className="form-control"/>
-                                    <Input variant="primary" placeholder="Last name" className="form-control"/>
-                                    <Input variant="primary" placeholder="Your email*" className="form-control"/>
-                                    <Input variant="primary" placeholder="Password*" className="form-control"/>
+                                    <Input variant="primary" name="firstName" autoComplete="true" placeholder="First name" className="form-control"/>
+                                    <Input variant="primary" name="lastName" autoComplete="true" placeholder="Last name" className="form-control"/>
+                                    <Input variant="primary" name="email" autoComplete="true" placeholder="Your email*" className="form-control"/>
+                                    <Input variant="primary" name="password" autoComplete="true" placeholder="Password*" className="form-control"/>
                                     <p className="form-text !text-sm">
                                         Your personal data will be used to support your experience throughout this website,
                                         to manage access to your account and for other purposes described in our privacy
