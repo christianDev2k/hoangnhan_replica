@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import HomeCarousel from '@/app/components/ui/HomeCarousel';
 
 export const metadata: Metadata = {
     title: 'HOME',
@@ -6,6 +7,6 @@ export const metadata: Metadata = {
 }
 export default function Page() {
     return (
-        <main>Main</main>
+        <main><HomeCarousel/></main>
 );
 }
