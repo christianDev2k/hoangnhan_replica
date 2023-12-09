@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /*Heading */
+    --font-h1: 48px;
+    --font-h2: 45px;
+    --font-h3: 36px;
+    --font-h4: 24px;
+    --heading-font-weight: 600;
+    --heading-line-height: 1.3;
+    --heading-letter-spacing: 0px;
+    --heading-color: #111111;
+
+    /*Header*/
+    --header-height: 70px;
+    --header-bg: #ffffff;
+    --sticky-header-bg: #ffffff;
+    --header-color: #111111;
+    --header_border_color: #ebebeb;
+    --header-transparent-color: #ffffff;
+
+    /*Base */
+    --border-color-base: #EBEBEB;
+    --base-font-size: 16px;
+    --base-color: #555555;
+    --base-font-weight: 400;
+    --base-body-bg-color: rgba(0, 0, 0, 0);
+    --base-line-height: 1.75;
+
+    /*Navigation*/
+    --navigation-font-family: Barlow Semi Condensed;
+    --navigation-font-size: 14px;
+    --navigation-font-weight: 600;
+    --navigation-letter-spacing: 0px;
+
+    /*Color */
+    --primary-color: #d73f0f;
+    --color-link: #111111;
+    --color-link-hover: #555;
+    --color-white: #ffffff;
+    --grey-color: #919191;
+    --light-grey-color: #f5f5f5;
+
+    /*Title*/
+    --page-title-size: 36px;
+
+    /*Button */
+    --btn-font-size: 14px;
+    --btn-font-weight: 700;
+    --btn-letter-spacing: 0px;
+    --btn-border-radius: 30px;
+    --btn-padding: 12px 55px;
+    --btn-width-border: 1px;
+    --btn-line-height: inherit;
+    --btn-text-transform: uppercase;
+    --btn-primary-bg: #111111;
+    --btn-primary-color: #ffffff;
+    --btn-white-color: #111111;
+    --btn-primary-color-hover: #ffffff;
+    --btn-primary-bg-hover: #111111;
+    --btn-secondary-color: #111111;
+    --btn-secondary-border-color: #DEDEDE;
+    --btn-secondary-bg: #ffffff;
+    --btn-secondary-color-hover: #ffffff;
+    --btn-secondary-bg-hover: #111111;
+    --btn-link-color: #111111;
+    --btn-link-color-hover: #555;
+    --btn-height: 50px;
+    --btn-small-height: 45px;
+
+    /*Menu*/
+    --menu-color: #111111;
+    --submenu-bg: #ffffff;
+    --submenu-color: #555;
+    --submenu-hover-color: #111;
+
+    /*Layout*/
+    --body-custom-width-container: 1260px;
+    --space_between_section: 50px;
+    --bls-container-fluid-width: 1600px;
+
+    /*Product card*/
+    --bls__product-name-size: 14px;
+    --bls__product-name-weight: var(--heading-font-weight);
+    --bls__product-price-size: 16px;
+    --bls__product-price-color: var(--heading-color);
+    --bls__product-price-sale-color: #999999;
+    --bls__product-price-sale-weight: var(--base-font-weight);
+
+    /*Transition */
+    --bls-transition: all 0.4s;
+
+    /*Menu */
+    --spacing-menu: 15px;
+
+    /*Input*/
+    --input-padding: 10px 20px;
+    --input-border-color: #dedede;
+    --input-bg: var(--color-white);
+    --input-color: var(--base-color);
+    --input-border-radius: var(--btn-border-radius);
+    --input-font-size: 14px;
+    --input-height: 50px;
+    --input-small-height: 45px;
+
+    /*Search*/
+    --search_result-item: 5;
+    --search-result-item-gap: 20px;
+
+    /*Product*/
+    --product-images-style-radius: 10px;
+
+    /*Scrollbar*/
+    --scrollbar-width: 6px;
+    --scrollbar-track-bg: #f1f1f1;
+    --scrollbar-thumb-bg: #c8c8c8;
+    --scrollbar-thumb-bg-hover: #222;
+
+    /*Footer */
+    --footer-bg--color: #111111;
+    --footer-heading-color: #ffffff;
+    --footer-text-color: #999999;
+    --footer-link-color: #999999;
+    --footer-link-hover-color: #ffffff;
+    --footer-heading-size: 14px;
+    --footer-text-size: 14px;
+}
+
+html {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button, input, [tabindex] {
+    outline: none;
+    border: none;
+}
+
+body {
+    margin: 0;
+    font-size: var(--base-font-size);
+    color: var(--base-color);
+    line-height: var(--base-line-height);
+    font-weight: var(--base-font-weight);
+    background-color: var(--base-body-bg-color);
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    touch-action: manipulation;
+}
+
+a[href], a[href]:hover {
+    transition: var(--bls-transition);
+    text-decoration: none;
+    color: var(--color-link);
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--heading-font-weight);
+    letter-spacing: var(--heading-letter-spacing);
+    color: var(--heading-color);
+    line-height: var(--heading-line-height);
+}
