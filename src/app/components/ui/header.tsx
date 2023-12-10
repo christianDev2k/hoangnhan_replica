@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from 'react';
-import { navList } from '@/const/navbar';
+import { navListData } from '@/app/components/data/navbar';
 import {
     SearchIcon,
     UserIcon,
     RecentlyIcon,
     WishlistIcon,
     CartIcon,
-    NavToggle
+    NavToggleIcon
 } from '@/app/components/ui/svg';
 import Badge from '@/app/components/ui/Badge';
 import { ToggleProps, ToggleStateProps } from '@/types/types';
@@ -35,7 +35,7 @@ export default function Header() {
                 {/*Nav toggle*/ }
                 <div className="block lg:hidden">
                     <button className=""
-                            onClick={ () => setToggle(pre => ( { ...pre, navbar: true } )) }>{ NavToggle }</button>
+                            onClick={ () => setToggle(pre => ( { ...pre, navbar: true } )) }>{ NavToggleIcon }</button>
                 </div>
 
                 {/*Logo */ }
@@ -48,7 +48,7 @@ export default function Header() {
                 {/*Navbar*/ }
                 <NavbarStyled className="justify-center hidden lg:flex">
                     {
-                        navList.map(nav => (
+                        navListData.map(nav => (
                             <li key={ nav.title }>
                                 <a href={ nav.path }>{ nav.title }</a>
                             </li>
@@ -288,7 +288,7 @@ function NavbarDrawer({ toggleOpen, setToggleOpen }: ToggleProps) {
             <nav className="px-[30px] py-2.5">
                 <ul className="navbar-list">
                     {
-                        navList.map(nav => (
+                        navListData.map(nav => (
                             <li key={ nav.title } className="navbar-item border-b border-[--border-color-base]">
                                 <a href={ nav.path }
                                    className="block py-[15px] font-semibold uppercase">{ nav.title }</a>

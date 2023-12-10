@@ -1,4 +1,9 @@
-export const navList = [
+export type NavListType = {
+    title: string,
+    path: string,
+}[];
+
+export const navListData: NavListType = [
     {
         title: 'Home',
         path: '#'
