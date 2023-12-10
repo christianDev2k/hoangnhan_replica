@@ -3,12 +3,13 @@
 import Image from 'next/image';
 import React from 'react';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
 import Button from '@/app/components/ui/Button';
 
 export default function HomeCarousel() {
@@ -16,12 +17,13 @@ export default function HomeCarousel() {
         <SwiperStyled>
             <Swiper
                 cssMode={ true }
-                modules={ [Pagination] }
+                modules={ [Pagination, Autoplay] }
                 pagination={ {
                     clickable: true,
                 } }
-                mousewheel={ true }
-                keyboard={ true }
+                autoplay={ {
+                    delay: 5000,
+                } }
                 loop={ true }
             >
                 <SwiperButtonNext><FontAwesomeIcon icon={ faAngleRight }/></SwiperButtonNext>
@@ -99,7 +101,7 @@ const SwiperStyled = styled.div`
             transition: var(--bls-transition);
             color: var(--color-black);
             font-size: 12px;
-            
+
             @media screen and (max-width: 1200px) {
                 width: 40px;
                 height: 40px;
@@ -134,29 +136,29 @@ const SwiperStyled = styled.div`
                 color: var(--color-white);
                 z-index: 10;
                 text-transform: uppercase;
-                
+
                 .subtitle {
                     font-size: var(--section-subheading-font-size, 12px);
                     font-weight: var(--section-subheading-font-weight, var(--heading-font-weight));
-                    margin-bottom: clamp(0rem,1vw,15px);
+                    margin-bottom: clamp(0rem, 1vw, 15px);
                 }
-                
+
                 .title {
                     color: var(--color-white);
-                    font-size: clamp(36px,4.7vw,var(--section-heading-font-size, 110px));
+                    font-size: clamp(36px, 4.7vw, var(--section-heading-font-size, 110px));
                     line-height: 1.15;
                     font-weight: var(--section-heading-font-weight);
                     margin-bottom: 15px;
                 }
-                
+
                 .desc {
                     font-size: var(--section-description-font-size, 14px);
                     line-height: 1.5;
                     font-weight: var(--section-description-font-weight, var(--base-font-weight));
                     text-transform: none;
-                    margin-bottom: clamp(25px,4vw,50px);
+                    margin-bottom: clamp(25px, 4vw, 50px);
                 }
-                
+
                 @media screen and (max-width: 768px) {
                     padding: 40px 15px
                 }
