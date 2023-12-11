@@ -78,8 +78,8 @@
     --submenu-hover-color: #111;
 
     /*Layout*/
-    --body-custom-width-container: 1260px;
-    --space_between_section: 50px;
+    --space_between_section: 60px;
+    --padding_x_section: 30px;
     --bls-container-fluid-width: 1600px;
 
     /*Product card*/
@@ -169,4 +169,19 @@ a[href], a[href]:hover {
     letter-spacing: var(--heading-letter-spacing);
     color: var(--heading-color);
     line-height: var(--heading-line-height);
+}
+
+h2 {
+    font-size: clamp(30px, 4vw, var(--font-h2));
+}
+
+.section {
+    max-width: var(--bls-container-fluid-width);
+    padding: var(--space_between_section) var(--padding_x_section);
+}
+
+.section-heading {
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 auto 20px;
 }
