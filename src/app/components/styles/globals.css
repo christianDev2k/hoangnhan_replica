@@ -78,8 +78,9 @@
     --submenu-hover-color: #111;
 
     /*Layout*/
-    --body-custom-width-container: 1260px;
-    --space_between_section: 50px;
+    --space_between_section: 60px;
+    --padding_x_section: 30px;
+    --padding_x_section_sm: 15px;
     --bls-container-fluid-width: 1600px;
 
     /*Product card*/
@@ -135,6 +136,9 @@
     --section-subheading-font-weight: 500;
     --section-description-font-size: 16px;
     --section-description-font-weight: 400;
+
+    /* Section */
+    --bls__section-header-margin: clamp(25px, 4.6vw, 40px);
 }
 
 html {
@@ -169,4 +173,26 @@ a[href], a[href]:hover {
     letter-spacing: var(--heading-letter-spacing);
     color: var(--heading-color);
     line-height: var(--heading-line-height);
+}
+
+h2 {
+    font-size: clamp(30px, 4vw, var(--font-h2));
+}
+
+.section {
+    max-width: var(--bls-container-fluid-width);
+    padding: var(--space_between_section) var(--padding_x_section);
+}
+
+@media screen and (max-width: 1200px) {
+    .section {
+        padding-left: var(--padding_x_section_sm);
+        padding-right: var(--padding_x_section_sm);
+    }
+}
+
+.section-heading {
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 auto 20px;
 }

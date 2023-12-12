@@ -1,8 +1,8 @@
 "use client";
 
 import React from 'react';
-import Header from '@/app/components/ui/header';
-import Footer from '@/app/components/ui/footer';
+import Header from '@/app/components/templates/header';
+import Footer from '@/app/components/templates/footer';
 import { barlow } from '@/app/components/fonts/fonts';
 import { ConfigProvider } from 'antd';
 import StyledComponentsRegistry from '@/app/lib/StyledComponentRegistry';
@@ -47,6 +47,12 @@ export default function RootLayout({
                             Collapse: {
                                 headerPadding: 'none',
                                 contentPadding: 'none',
+                            },
+                            Tabs: {
+                                itemActiveColor: 'none',
+                                itemHoverColor: 'none',
+                                itemSelectedColor: 'none',
+                                inkBarColor: 'none',
                             },
                         },
                     } }>

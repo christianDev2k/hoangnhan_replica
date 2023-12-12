@@ -16,7 +16,7 @@ import { CardProduct } from '@/app/components/ui/CardProduct';
 import Drawer from '@/app/components/ui/Drawer';
 import Button from '@/app/components/ui/Button';
 import Modal from '@/app/components/ui/Modal';
-import CartDrawer from '@/app/components/ui/MiniCartDrawer';
+import CartDrawer from '@/app/components/templates/MiniCartDrawer';
 import Input from '@/app/components/ui/Input';
 import { blackOpsOne } from '@/app/components/fonts/fonts';
 import styled from 'styled-components';
