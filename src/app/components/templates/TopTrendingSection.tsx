@@ -11,7 +11,7 @@ type tabPaneType = { key: string, label: string, children: React.ReactNode }[];
 const tabPane: tabPaneType = tabPaneData.map(({ label, data }) => ( {
     key: label,
     label,
-    children: <ProductsSlider data={ data }/>
+    children: <ProductsSlider data={ data }/>,
 } ))
 
 export function TopTrendingSection() {
@@ -25,11 +25,11 @@ export function TopTrendingSection() {
                 defaultActiveKey="1"
                 centered
                 items={ tabPane }
-                tabBarStyle={{
+                tabBarStyle={ {
                     fontSize: 14,
                     fontWeight: 600,
                     textTransform: 'uppercase',
-                }}
+                } }
             />
         </TopTrendingSectionStyled>
     );
@@ -37,7 +37,7 @@ export function TopTrendingSection() {
 
 const TopTrendingSectionStyled = styled.div`
     .ant-tabs-nav-wrap {
-        margin-bottom: 40px;
+        margin-bottom: var(--bls__section-header-margin);
     }
 
     .ant-tabs-nav {

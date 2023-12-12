@@ -135,6 +135,9 @@
     --section-subheading-font-weight: 500;
     --section-description-font-size: 16px;
     --section-description-font-weight: 400;
+
+    /* Section */
+    --bls__section-header-margin: clamp(25px, 4.6vw, 40px);
 }
 
 html {

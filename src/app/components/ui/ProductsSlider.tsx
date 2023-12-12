@@ -14,12 +14,25 @@ export function ProductsSlider({ data }: { data: CardProductProps[] }) {
                 slidesPerView={ 4 }
                 spaceBetween="20"
                 loop={ true }
+                breakpoints={ {
+                    0: {
+                        slidesPerView: 2,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                    },
+                    1200: {
+                        slidesPerView: 4,
+                    },
+                } }
             >
-                <SwiperButtonNext><FontAwesomeIcon icon={ faAngleRight }/></SwiperButtonNext>
-                <SwiperButtonPre><FontAwesomeIcon icon={ faAngleLeft }/></SwiperButtonPre>
+                <div className="navigate">
+                    <SwiperButtonPre><FontAwesomeIcon icon={ faAngleLeft }/></SwiperButtonPre>
+                    <SwiperButtonNext><FontAwesomeIcon icon={ faAngleRight }/></SwiperButtonNext>
+                </div>
                 {
-                    data.map(() => (
-                        <SwiperSlide key="">
+                    data.map((_, index) => (
+                        <SwiperSlide key={ index }>
                             <CardProduct dynamic={ true }/>
                         </SwiperSlide>
                     ))
@@ -71,11 +84,6 @@ const ProductSliderStyled = styled.div`
         color: var(--color-black);
         font-size: 12px;
 
-        @media screen and (max-width: 1200px) {
-            width: 40px;
-            height: 40px;
-        }
-
         &.pre {
             left: 22px;
         }
@@ -87,6 +95,33 @@ const ProductSliderStyled = styled.div`
         &:hover {
             background-color: var(--color-black);
             color: var(--color-white);
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        .nav-btn {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    @media screen and (max-width: 980px) {
+        .swiper {
+            display: flex;
+            flex-direction: column-reverse;
+
+            .navigate {
+                display: flex;
+                justify-content: center;
+
+                .nav-btn {
+                    position: unset;
+                    opacity: 1;
+                    transform: unset !important;
+                    margin: 0 5px var(--bls__section-header-margin);
+                    border: 1px solid var(--border-color-base);
+                }
+            }
         }
     }
 `;

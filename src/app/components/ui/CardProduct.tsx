@@ -33,7 +33,7 @@ export function CardProduct({ dynamic = false }: CardProductProps) {
                     sizes="100%"
                 />
 
-                <div className={ clsx('action-btn absolute bottom-5 flex justify-center w-full', {
+                <div className={ clsx('action-btn absolute flex justify-center w-full', {
                     'hidden': !dynamic,
                 }) }>
                     <div className="flex items-center justify-center gap-x-1">
@@ -104,6 +104,7 @@ const CardStyled = styled(Card)`
         opacity: 0;
         visibility: hidden;
         transition: var(--bls-transition);
+        bottom: 10px;
 
         .action-item {
             margin: 0 2px;
@@ -135,5 +136,29 @@ const CardStyled = styled(Card)`
         transform: translateY(-12px);
         opacity: 1;
         visibility: visible;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .action-btn {
+            bottom: 0;
+
+            .action-item {
+                width: 35px;
+                height: 35px;
+
+                svg {
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .action-btn {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(-12px);
+        }
     }
 `;
