@@ -17,9 +17,11 @@ export function ProductsSlider({ data }: { data: CardProductProps[] }) {
                 breakpoints={ {
                     0: {
                         slidesPerView: 2,
+                        spaceBetween: 15,
                     },
                     768: {
                         slidesPerView: 3,
+                        spaceBetween: 20,
                     },
                     1200: {
                         slidesPerView: 4,

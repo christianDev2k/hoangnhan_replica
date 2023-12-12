@@ -80,6 +80,7 @@
     /*Layout*/
     --space_between_section: 60px;
     --padding_x_section: 30px;
+    --padding_x_section_sm: 15px;
     --bls-container-fluid-width: 1600px;
 
     /*Product card*/
@@ -181,6 +182,13 @@ h2 {
 .section {
     max-width: var(--bls-container-fluid-width);
     padding: var(--space_between_section) var(--padding_x_section);
+}
+
+@media screen and (max-width: 1200px) {
+    .section {
+        padding-left: var(--padding_x_section_sm);
+        padding-right: var(--padding_x_section_sm);
+    }
 }
 
 .section-heading {
