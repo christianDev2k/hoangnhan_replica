@@ -98,7 +98,7 @@ const CardStyled = styled(Card)`
         }
 
         &:hover {
-            .& img {
+            & img {
                 transform: scale(1.05);
             }
         }
