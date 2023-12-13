@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import HomeCarousel from '@/app/components/templates/HomeCarousel';
 import PageScrolling from '@/app/components/templates/PageScrolling';
-import { pageScrollingData } from '@/app/components/data/page-scrolling';
-import { TopTrendingSection } from '@/app/components/templates/TopTrendingSection';
+import TopTrendingSection from '@/app/components/templates/TopTrendingSection';
+import VideoSection from '@/app/components/templates/VideoSection';
 
 export const metadata: Metadata = {
     title: 'HOME',
@@ -12,8 +12,9 @@ export default function Page() {
     return (
         <main>
             <HomeCarousel/>
-            <PageScrolling data={ pageScrollingData }/>
+            <PageScrolling/>
             <TopTrendingSection/>
+            <VideoSection/>
         </main>
     );
 }

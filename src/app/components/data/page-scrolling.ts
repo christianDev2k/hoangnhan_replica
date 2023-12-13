@@ -1,4 +1,4 @@
-export type PageScrollingDataType = { title: string }[];
+type PageScrollingDataType = { title: string }[];
 
 export const pageScrollingData: PageScrollingDataType = [
     {

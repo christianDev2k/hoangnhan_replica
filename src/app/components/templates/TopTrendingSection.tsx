@@ -14,7 +14,7 @@ const tabPane: tabPaneType = tabPaneData.map(({ label, data }) => ( {
     children: <ProductsSlider data={ data }/>,
 } ))
 
-export function TopTrendingSection() {
+export default function TopTrendingSection() {
     return (
         <TopTrendingSectionStyled className="section">
             {/*Heading*/ }
