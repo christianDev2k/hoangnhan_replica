@@ -80,7 +80,8 @@
     --submenu-hover-color: #111;
 
     /*Layout*/
-    --space_between_section: 50px;
+    --space_between_section: 40px;
+    --space_between_section_sm: 25px;
     --padding_x_section: 30px;
     --padding_x_section_sm: 15px;
     --bls-container-fluid-width: 1600px;
@@ -190,8 +191,7 @@ h2 {
 
 @media screen and (max-width: 1200px) {
     .section {
-        padding-left: var(--padding_x_section_sm);
-        padding-right: var(--padding_x_section_sm);
+        padding: var(--space_between_section_sm) var(--padding_x_section_sm);
     }
 }
 
