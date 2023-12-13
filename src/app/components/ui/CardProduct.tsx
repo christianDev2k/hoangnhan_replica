@@ -21,12 +21,12 @@ export function CardProduct({ dynamic = false }: CardProductProps) {
         <CardStyled>
             <a
                 href="#"
-                className={ clsx('card-img block relative w-full aspect-square overflow-hidden', {
+                className={ clsx('card-img block relative w-full aspect-square overflow-hidden rounded-[var(--product-images-style-radius)]', {
                     'dynamic relative': dynamic,
                 }) }
             >
                 <Image
-                    className="!rounded-[var(--product-images-style-radius)] object-cover hover:scale-105"
+                    className="object-cover"
                     alt="products_sport_3_1.webp"
                     src="/img/products_sport_3_1.webp"
                     fill
@@ -63,10 +63,6 @@ const CardStyled = styled(Card)`
         box-shadow: none !important;
     }
 
-    .img {
-        transition: var(--bls-transition);
-    }
-
     h3 {
         font-size: var(--bls__product-name-size);
     }
@@ -96,9 +92,24 @@ const CardStyled = styled(Card)`
         }
     }
 
-    .card-img img {
-        transition: var(--bls-transition);
+    .card-img {
+        & img {
+            transition: var(--bls-transition);
+        }
+
+        &:hover {
+            .& img {
+                transform: scale(1.05);
+            }
+        }
+
+        &.dynamic:hover .action-btn {
+            transform: translateY(-12px);
+            opacity: 1;
+            visibility: visible;
+        }
     }
+
 
     .action-btn {
         opacity: 0;
@@ -130,12 +141,6 @@ const CardStyled = styled(Card)`
                 height: 16px;
             }
         }
-    }
-
-    .card-img.dynamic:hover .action-btn {
-        transform: translateY(-12px);
-        opacity: 1;
-        visibility: visible;
     }
 
     @media screen and (max-width: 1024px) {

@@ -2,13 +2,13 @@
 
 import styled from 'styled-components';
 import Tabs from '@/app/components/ui/Tabs';
-import { tabPaneData } from '@/app/components/data/top-trending';
+import { tabPaneData as data } from '@/app/components/data/top-trending';
 import React from 'react';
 import { ProductsSlider } from '@/app/components/ui/ProductsSlider';
 
 type tabPaneType = { key: string, label: string, children: React.ReactNode }[];
 
-const tabPane: tabPaneType = tabPaneData.map(({ label, data }) => ( {
+const tabPane: tabPaneType = data.map(({ label, data }) => ( {
     key: label,
     label,
     children: <ProductsSlider data={ data }/>,
