@@ -109,8 +109,7 @@ const CardStyled = styled(Card)`
             visibility: visible;
         }
     }
-
-
+    
     .action-btn {
         opacity: 0;
         visibility: hidden;
