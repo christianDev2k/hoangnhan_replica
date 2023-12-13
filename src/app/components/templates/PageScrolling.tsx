@@ -2,9 +2,9 @@
 
 import { ScrollLineIcon } from '@/app/components/ui/svg';
 import styled, { keyframes } from 'styled-components';
-import { PageScrollingDataType } from '@/app/components/data/page-scrolling';
+import { pageScrollingData as data } from '@/app/components/data/page-scrolling';
 
-export default function PageScrolling({ data }: { data: PageScrollingDataType }) {
+export default function PageScrolling() {
     return (
         <PageScrollingStyled>
             <div className="py-[18px] border-y border-[--heading-color]">
