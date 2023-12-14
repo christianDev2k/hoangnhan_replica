@@ -8,19 +8,19 @@ export default function HomeBanner() {
     return (
         <HomeBannerStyled className="section">
             <div className="banner-item">
-                <Image src="/img/home-banner/men.webp" alt="Men image" fill/>
+                <Image src="/img/home-banner/men.webp" alt="Men image" fill sizes="100%"/>
                 <div className="content">
                     <Button variant="white">Men&apos;s</Button>
                 </div>
             </div>
             <div className="banner-item">
-                <Image src="/img/home-banner/women.webp" alt="Women image" fill/>
+                <Image src="/img/home-banner/women.webp" alt="Women image" fill sizes="100%"/>
                 <div className="content">
                     <Button variant="white">Women&apos;s</Button>
                 </div>
             </div>
             <div className="banner-item">
-                <Image src="/img/home-banner/unisex.webp" alt="Unisex image" fill/>
+                <Image src="/img/home-banner/unisex.webp" alt="Unisex image" fill sizes="100%"/>
                 <div className="content">
                     <Button variant="white">Unisex</Button>
                 </div>
@@ -67,6 +67,10 @@ const HomeBannerStyled = styled.div`
 
             .content {
                 padding: 20px;
+            }
+            
+            &:last-child {
+                margin-bottom: 0;
             }
         }
 
