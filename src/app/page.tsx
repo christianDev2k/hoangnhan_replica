@@ -4,6 +4,7 @@ import PageScrolling from '@/app/components/templates/PageScrolling';
 import TopTrendingSection from '@/app/components/templates/TopTrendingSection';
 import VideoSection from '@/app/components/templates/VideoSection';
 import YouMightLikeSection from '@/app/components/templates/YouMightLikeSection';
+import HomeBanner from '@/app/components/templates/HomeBanner';
 
 export const metadata: Metadata = {
     title: 'HOME',
@@ -17,6 +18,7 @@ export default function Page() {
             <TopTrendingSection/>
             <VideoSection/>
             <YouMightLikeSection/>
+            <HomeBanner/>
         </main>
     );
 }
