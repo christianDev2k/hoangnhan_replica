@@ -1,3 +1,4 @@
+import React from 'react';
 import { Metadata } from 'next';
 import HomeCarousel from '@/app/components/templates/HomeCarousel';
 import PageScrolling from '@/app/components/templates/PageScrolling';
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     title: 'HOME',
     icons: '/logo/devil-rabbit-sport-logo.png'
 }
-export default function Page() {
+export default function Page(): React.ReactNode {
     return (
         <main>
             <HomeCarousel/>
@@ -21,6 +22,7 @@ export default function Page() {
             <YouMightLikeSection/>
             <HomeBanner/>
             <PolicySection/>
+            <PageScrolling/>
         </main>
     );
 }

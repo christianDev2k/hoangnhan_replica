@@ -11,6 +11,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import Button from '@/app/components/ui/Button';
+import { carouselData as data } from '@/app/components/data/carousel';
 
 export default function HomeCarousel() {
     return (
@@ -28,30 +29,22 @@ export default function HomeCarousel() {
             >
                 <SwiperButtonNext><FontAwesomeIcon icon={ faAngleRight }/></SwiperButtonNext>
                 <SwiperButtonPre><FontAwesomeIcon icon={ faAngleLeft }/></SwiperButtonPre>
-                <SwiperSlide>
-                    <Image src="/img/carousel/sport_s1.webp" alt="public/img/carousel/sport_s1.webp" fill
-                           sizes="( max-width: 100vw )" placeholder="blur"
-                           blurDataURL={ '/logo/logo.png' }
-                    />
-                    <div className="slider-content">
-                        <div className="subtitle">SUMMER ESSENTIALS</div>
-                        <h2 className="title">FITNESS HOUSE</h2>
-                        <p className="desc">Update your wardrobe with distinctive fashion style.</p>
-                        <Button variant="white">Shop Now</Button>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Image src="/img/carousel/sport_s3.webp" alt="public/img/carousel/sport_s1.webp" fill
-                           sizes="( max-width: 100vw )" placeholder="blur"
-                           blurDataURL={ '/logo/logo.png' }
-                    />
-                    <div className="slider-content">
-                        <div className="subtitle">WINTER MELTING</div>
-                        <h2 className="title">MIX CLOTHES</h2>
-                        <p className="desc">Update your wardrobe with distinctive fashion style.</p>
-                        <Button variant="white">Shop Now</Button>
-                    </div>
-                </SwiperSlide>
+                {
+                    data.map(carousel => (
+                        <SwiperSlide key={ carousel.title }>
+                            <Image src={ carousel.img_path } alt={ carousel.alt } fill
+                                   sizes="( max-width: 100vw )" placeholder="blur"
+                                   blurDataURL={ '/logo/logo.png' }
+                            />
+                            <div className="slider-content">
+                                <div className="subtitle">{ carousel.subtitle }</div>
+                                <h2 className="title">{ carousel.title }</h2>
+                                <p className="desc">{ carousel.desc }</p>
+                                <Button variant="white">Shop Now</Button>
+                            </div>
+                        </SwiperSlide>
+                    ))
+                }
             </Swiper>
         </SwiperStyled>
     );
