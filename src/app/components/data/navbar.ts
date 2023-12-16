@@ -6,11 +6,11 @@ export type NavListType = {
 export const navListData: NavListType = [
     {
         title: 'Home',
-        path: '#'
+        path: '/'
     },
     {
         title: 'Shop',
-        path: '#'
+        path: '/shop'
     },
     {
         title: 'Product',
