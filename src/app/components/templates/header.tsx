@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState } from 'react';
 import { navListData } from '@/app/components/data/navbar';
@@ -20,6 +20,9 @@ import CartDrawer from '@/app/components/templates/MiniCartDrawer';
 import Input from '@/app/components/ui/Input';
 import { blackOpsOne } from '@/app/components/fonts/fonts';
 import styled from 'styled-components';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { clsx } from 'clsx';
 
 export default function Header() {
     const [toggle, setToggle] = useState<ToggleStateProps>({
@@ -28,6 +31,8 @@ export default function Header() {
         cart: false,
         navbar: false,
     });
+
+    const pathname = usePathname();
 
     return (
         <header className="border-b h-[--header-height] px-[15px] lg:px-[30px] py-[11px] flex items-center">
@@ -50,7 +55,12 @@ export default function Header() {
                     {
                         navListData.map(nav => (
                             <li key={ nav.title }>
-                                <a href={ nav.path }>{ nav.title }</a>
+                                <Link
+                                    href={ nav.path }
+                                    className={ clsx({
+                                        '!text-[--primary-color]': pathname === nav.path,
+                                    }) }
+                                >{ nav.title }</Link>
                             </li>
                         ))
                     }
@@ -114,8 +124,10 @@ function AuthenticateModal({ toggleOpen, setToggleOpen }: ToggleProps) {
                             <div>
                                 <h3>Login</h3>
                                 <div className="modal-body">
-                                    <Input variant="primary" name="email" autoComplete="true" placeholder="Your email*" className="form-control"/>
-                                    <Input variant="primary" name="password" autoComplete="true" placeholder="Password*" className="form-control"/>
+                                    <Input variant="primary" name="email" autoComplete="true" placeholder="Your email*"
+                                           className="form-control"/>
+                                    <Input variant="primary" name="password" autoComplete="true" placeholder="Password*"
+                                           className="form-control"/>
                                     <a href="#" className="form-text">Forgot your password?</a>
                                     <div className="mt-[30px]">
                                         <div className="mb-5">
@@ -146,10 +158,14 @@ function AuthenticateModal({ toggleOpen, setToggleOpen }: ToggleProps) {
                             <div>
                                 <h3>Create Account</h3>
                                 <div className="modal-body">
-                                    <Input variant="primary" name="firstName" autoComplete="true" placeholder="First name" className="form-control"/>
-                                    <Input variant="primary" name="lastName" autoComplete="true" placeholder="Last name" className="form-control"/>
-                                    <Input variant="primary" name="email" autoComplete="true" placeholder="Your email*" className="form-control"/>
-                                    <Input variant="primary" name="password" autoComplete="true" placeholder="Password*" className="form-control"/>
+                                    <Input variant="primary" name="firstName" autoComplete="true" placeholder="First name"
+                                           className="form-control"/>
+                                    <Input variant="primary" name="lastName" autoComplete="true" placeholder="Last name"
+                                           className="form-control"/>
+                                    <Input variant="primary" name="email" autoComplete="true" placeholder="Your email*"
+                                           className="form-control"/>
+                                    <Input variant="primary" name="password" autoComplete="true" placeholder="Password*"
+                                           className="form-control"/>
                                     <p className="form-text !text-sm">
                                         Your personal data will be used to support your experience throughout this website,
                                         to manage access to your account and for other purposes described in our privacy
@@ -265,7 +281,7 @@ function NavbarDrawer({ toggleOpen, setToggleOpen }: ToggleProps) {
     return (
         <NavbarDrawerStyled
             open={ toggleOpen }
-            width={400}
+            width={ 400 }
             title={
                 <div className="p-[15px] text-white">
                     <p className="text-[12px] font-semibold hover:text-white leading-[--base-line-height]">MENU</p>
@@ -290,8 +306,11 @@ function NavbarDrawer({ toggleOpen, setToggleOpen }: ToggleProps) {
                     {
                         navListData.map(nav => (
                             <li key={ nav.title } className="navbar-item border-b border-[--border-color-base]">
-                                <a href={ nav.path }
-                                   className="block py-[15px] font-semibold uppercase">{ nav.title }</a>
+                                <Link href={ nav.path }
+                                      className="block py-[15px] font-semibold uppercase"
+                                >
+                                    { nav.title }
+                                </Link>
                             </li>
                         ))
                     }
@@ -307,133 +326,133 @@ function NavbarDrawer({ toggleOpen, setToggleOpen }: ToggleProps) {
 }
 
 const NavbarStyled = styled.ul`
-  li {
-    a {
-      position: relative;
-      padding: 10px var(--spacing-menu);
-      white-space: nowrap;
-      font-weight: var(--navigation-font-weight);
-      letter-spacing: var(--navigation-letter-spacing);
-      font-size: var(--navigation-font-size);
-      cursor: pointer;
-      text-transform: uppercase;
-      line-height: 28px;
+    li {
+        a {
+            position: relative;
+            padding: 10px var(--spacing-menu);
+            white-space: nowrap;
+            font-weight: var(--navigation-font-weight);
+            letter-spacing: var(--navigation-letter-spacing);
+            font-size: var(--navigation-font-size);
+            cursor: pointer;
+            text-transform: uppercase;
+            line-height: 28px;
 
-      &:hover {
-        color: var(--primary-color);
-      }
+            &:hover {
+                color: var(--primary-color);
+            }
+        }
     }
-  }
 `;
 
 const IconsStyled = styled.ul`
-  li {
-    margin-left: 20px;
+    li {
+        margin-left: 20px;
 
-    svg {
-      transition: var(--bls-transition);
+        svg {
+            transition: var(--bls-transition);
 
-      &:hover {
-        color: var(--primary-color);
-      }
+            &:hover {
+                color: var(--primary-color);
+            }
+        }
     }
-  }
 `;
 
 const SearchDrawerStyled = styled(Drawer)`
-  position: relative;
+    position: relative;
 
-  .ant-drawer-close {
-    font-size: 18px;
-    position: absolute;
-    right: 25px;
-    top: 25px;
-    color: var(--grey-color);
-    z-index: 1;
+    .ant-drawer-close {
+        font-size: 18px;
+        position: absolute;
+        right: 25px;
+        top: 25px;
+        color: var(--grey-color);
+        z-index: 1;
 
-    &:hover {
-      color: var(--color-link-hover);
+        &:hover {
+            color: var(--color-link-hover);
+        }
     }
-  }
 
-  h4 {
-    --font-h4: 32px;
-    font-size: clamp(20px, 3vw, var(--font-h4));
-    margin-bottom: clamp(10px, 3vw, 20px);
-  }
+    h4 {
+        --font-h4: 32px;
+        font-size: clamp(20px, 3vw, var(--font-h4));
+        margin-bottom: clamp(10px, 3vw, 20px);
+    }
 `;
 
 const AuthenticateModalStyled = styled(Modal)`
-  .ant-modal-content {
-    padding: 0 !important;
-    border-radius: 5px !important;
-  }
-
-  .ant-modal-close {
-    &:hover {
-      color: var(--btn-link-color);
-      text-decoration: none;
-      cursor: pointer;
-      background-color: transparent;
-    }
-  }
-
-  h3 {
-    --font-h3: 24px;
-    text-align: center;
-    padding-top: 35px;
-    margin: 0;
-    font-size: clamp(16px, 3.5vw, var(--font-h3));
-    line-height: 1;
-    text-transform: capitalize;
-  }
-
-  .modal-body {
-    padding: 30px;
-
-    .form-control {
-      width: 100%;
-      margin-bottom: 15px;
+    .ant-modal-content {
+        padding: 0 !important;
+        border-radius: 5px !important;
     }
 
-    .form-text {
-      font-size: var(--base-font-size);
-      color: var(--base-color);
+    .ant-modal-close {
+        &:hover {
+            color: var(--btn-link-color);
+            text-decoration: none;
+            cursor: pointer;
+            background-color: transparent;
+        }
     }
 
-    .authenticate-btn {
-      width: 100%;
+    h3 {
+        --font-h3: 24px;
+        text-align: center;
+        padding-top: 35px;
+        margin: 0;
+        font-size: clamp(16px, 3.5vw, var(--font-h3));
+        line-height: 1;
+        text-transform: capitalize;
     }
-  }
+
+    .modal-body {
+        padding: 30px;
+
+        .form-control {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .form-text {
+            font-size: var(--base-font-size);
+            color: var(--base-color);
+        }
+
+        .authenticate-btn {
+            width: 100%;
+        }
+    }
 `;
 
 const NavbarDrawerStyled = styled(Drawer)`
-  .ant-drawer-close {
-    margin-right: 15px;
-    color: white;
+    .ant-drawer-close {
+        margin-right: 15px;
+        color: white;
 
-    &:hover {
-      color: var(--primary-color);
+        &:hover {
+            color: var(--primary-color);
+        }
+
+        svg {
+            width: 14px;
+            height: 14px;
+        }
     }
 
-    svg {
-      width: 14px;
-      height: 14px;
+    .ant-drawer-header-title {
+        justify-content: space-between;
+        flex-direction: row-reverse;
     }
-  }
 
-  .ant-drawer-header-title {
-    justify-content: space-between;
-    flex-direction: row-reverse;
-  }
-
-  .ant-drawer-title {
-    flex: none;
-  }
-
-  .navbar-list .navbar-item {
-    &:last-child {
-      border-bottom: none;
+    .ant-drawer-title {
+        flex: none;
     }
-  }
+
+    .navbar-list .navbar-item {
+        &:last-child {
+            border-bottom: none;
+        }
+    }
 `;
