@@ -32,6 +32,7 @@ export default function RootLayout({
                             colorError: 'none',
                             colorErrorBorderHover: 'none',
                             colorErrorActive: 'none',
+                            colorText: '#555',
                         },
                         components: {
                             InputNumber: {
@@ -53,6 +54,11 @@ export default function RootLayout({
                                 itemHoverColor: 'none',
                                 itemSelectedColor: 'none',
                                 inkBarColor: 'none',
+                            },
+                            Select: {
+                                multipleItemBg: 'transparent',
+                                optionSelectedColor: '#555',
+                                optionActiveBg: 'transparent'
                             },
                         },
                     } }>

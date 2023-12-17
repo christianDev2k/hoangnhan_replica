@@ -9,7 +9,7 @@ import HomeBanner from '@/app/components/templates/HomeBanner';
 import PolicySection from '@/app/components/templates/PolicySection';
 
 export const metadata: Metadata = {
-    title: 'HOME',
+    title: 'Home - HOANGNHAN',
     icons: '/logo/devil-rabbit-sport-logo.png'
 }
 export default function Page(): React.ReactNode {

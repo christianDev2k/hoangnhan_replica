@@ -200,3 +200,23 @@ h2 {
     text-align: center;
     margin: 0 auto 20px;
 }
+
+.heading-title {
+    color: var(--heading-color);
+    font-size: clamp(30px, 4vw, 45px);
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.ant-select-dropdown {
+    min-width: 200px !important;
+}
+
+.ant-select-item {
+    transition: var(--bls-transition) !important;
+}
+
+.ant-select-item:hover {
+    color: var(--heading-color) !important;
+    padding-left: 20px !important;
+}
