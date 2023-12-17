@@ -1,3 +1,5 @@
+import { PATH } from '@/constant/path';
+
 export type NavListType = {
     title: string,
     path: string,
@@ -6,11 +8,11 @@ export type NavListType = {
 export const navListData: NavListType = [
     {
         title: 'Home',
-        path: '/'
+        path: PATH.home,
     },
     {
         title: 'Shop',
-        path: '/shop'
+        path: PATH.shop,
     },
     {
         title: 'Product',

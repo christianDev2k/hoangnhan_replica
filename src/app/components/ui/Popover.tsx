@@ -6,7 +6,7 @@ type PopoverProps = {
 };
 
 const Popover: PopoverProps = props => {
-    return <PopoverA {...props} />;
+    return <PopoverA color="#111" overlayInnerStyle={ { paddingBlock: 4, borderRadius: 5 } } { ...props } />;
 };
 
 export default Popover;

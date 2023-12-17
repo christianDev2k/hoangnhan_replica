@@ -88,8 +88,6 @@ export default function CartDrawer({ toggleOpen, setToggleOpen }: ToggleProps) {
                     <ul className="cart-icons border-y border-[--border-color-base] bg-white flex">
                         <Popover
                             content={ <span className="text-white text-[13px]">Add order note</span> }
-                            color="#111"
-                            overlayInnerStyle={ { paddingBlock: 4, borderRadius: 5 } }
                         >
                             <li className="icon"><i>{ NoteIcon }</i></li>
                         </Popover>

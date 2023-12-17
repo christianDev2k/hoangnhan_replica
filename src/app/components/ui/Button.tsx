@@ -26,7 +26,7 @@ const ButtonAStyled = styled(ButtonA)<ButtonProps>`
     align-items: center;
     
     @media screen and (max-width: 786px) {
-        padding: 0 20px;              
+        padding: 0 40px;              
         height: var(--btn-small-height);
     }
   ` }

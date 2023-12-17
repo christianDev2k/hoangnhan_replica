@@ -21,7 +21,7 @@ export default function VideoSection() {
                         className="w-full block object-cover h-[300px] md:h-[700px]"
                     >
                         <source src="/video/video-section.mp4" type="video/mp4"/>
-                        <Image src="/img/video-section/placeholder.webp" alt="video" fill/>
+                        <Image src="/img/video-section/placeholder.webp" alt="video" fill sizes="100%"/>
                     </video>
                 </div>
 
